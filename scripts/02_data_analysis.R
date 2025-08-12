@@ -20,10 +20,8 @@ View(monthly_temp)
 # Base R
 hottest_month <- monthly_temp[which.max(monthly_temp$Avg_temp), ]
 coldest_month <- monthly_temp[which.min(monthly_temp$Avg_temp), ]
-
-View(hottest_month)
-View(coldest_month)
-
+print(hottest_month)
+print(coldest_month)
 # dplyr version
 monthly_temp %>%
   summarise(
@@ -32,3 +30,22 @@ monthly_temp %>%
   ) %>%
   View()
 
+# ____Question 3: Wind-Temperature correlation____-----
+View(airquality)
+correlation<-cor(airquality$Temp,airquality$Wind,use = "complete.obs")
+cat("Correlation between Temperature and Wind speed:", correlation, "\n")
+airquality%>%
+  group_by(Month) %>%
+  summarise(correlation=cor(Temp,Wind))%>%
+  View()
+
+# Save processed data
+write.csv(monthly_temp, "data/processed/monthly_temperature_summary.csv", row.names = FALSE)
+
+# print results_________-----
+
+print("=== ANALYSIS RESULTS ===")
+print(monthly_temp)
+print(paste("Hottest month:", hottest_month$Month, "- Avg temp:", round(hottest_month$Avg_temp, 1)))
+print(paste("Coldest month:", coldest_month$Month, "- Avg temp:", round(coldest_month$Avg_temp, 1)))
+print(paste("Wind-Temperature correlation:", round(correlation, 3)))
