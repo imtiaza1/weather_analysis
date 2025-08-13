@@ -1,7 +1,8 @@
 # Weather Data Analysis Project
 
 ## Overview
-This project analyzes air quality and weather patterns using R programming, focusing on temperature, wind, and humidity data from New York (May–September).
+This project analyzes air quality and weather patterns using R programming, focusing on temperature, wind, and humidity data from New York (May–September).  
+It now includes **data visualizations** and **automated analysis reports**.
 
 ## Dataset
 - Using built-in R `airquality` dataset
@@ -15,16 +16,17 @@ This project analyzes air quality and weather patterns using R programming, focu
 ## File Structure
 - `scripts/01_data_exploration.R` – Initial data exploration
 - `scripts/02_data_analysis.R` – Main analysis and calculations  
-- `scripts/03_visualization.R` – Charts and plots (to be added later)
+- `scripts/03_visualization.R` – Generates and saves plots to `outputs/plots/`
 - `data/raw/` – Original datasets
 - `data/processed/` – Cleaned datasets
-- `outputs/plots/` – Generated charts
-- `outputs/reports/` – Analysis summaries
+- `outputs/plots/` – Generated charts and graphs
+- `outputs/reports/` – Text-based analysis summaries
 
 ## How to Run
 1. Open `weather_analysis.Rproj` in RStudio
-2. Run scripts in order: 01 → 02 → 03
-3. Check the `outputs/` folder for results
+2. Run scripts in order: **01 → 02 → 03**
+3. Check the `outputs/plots/` folder for generated charts
+4. Check the `outputs/reports/` folder for the summary text report
 
 ## Key Findings
 The analysis revealed seasonal temperature patterns and a notable relationship between wind speed and temperature.
@@ -41,6 +43,22 @@ The analysis revealed seasonal temperature patterns and a notable relationship b
 - **Coldest month:** May — average temperature **65.5°F**
 - **Wind vs Temperature:** Moderate **negative correlation (-0.458)**, meaning higher temperatures generally occur with lower wind speeds.
 
+## Visualizations
+
+### Monthly Average Temperature
+![Monthly Temperature Plot](outputs/plots/monthly_temperature.png)
+
+### Wind vs Temperature
+![Wind vs Temperature Scatter Plot](outputs/plots/wind_vs_temperature.png)
+
+### Monthly Temperature Distribution
+![Monthly Temperature Distribution](outputs/plots/monthly_distribution.png)
+
+
+## Reports
+- Text summary file: `analysis_summary.txt`  
+  Includes hottest month, coldest month, and wind–temperature correlation.
+
 ## Planned Additions
-- Add visualizations showing monthly temperature trends
-- Create scatter plots to illustrate the wind-temperature relationship
+- More weather variable comparisons (e.g., humidity trends)
+- Interactive visualizations using Shiny or Plotly
