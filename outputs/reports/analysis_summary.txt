@@ -1,0 +1,3 @@
+=== WEATHER ANALYSIS SUMMARY ===
+Hottest month: 8 - Avg temp: 84 F
+Coldest month: 5 - Avg temp: 65.5 F

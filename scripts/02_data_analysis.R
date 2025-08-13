@@ -20,8 +20,6 @@ View(monthly_temp)
 # Base R
 hottest_month <- monthly_temp[which.max(monthly_temp$Avg_temp), ]
 coldest_month <- monthly_temp[which.min(monthly_temp$Avg_temp), ]
-print(hottest_month)
-print(coldest_month)
 # dplyr version
 monthly_temp %>%
   summarise(
@@ -42,8 +40,14 @@ airquality%>%
 # Save processed data
 write.csv(monthly_temp, "data/processed/monthly_temperature_summary.csv", row.names = FALSE)
 
-# print results_________-----
+# save reports
+sink("outputs/reports/analysis_summary.txt")
+cat("=== WEATHER ANALYSIS SUMMARY ===\n")
+cat("Hottest month:", hottest_month$Month, "- Avg temp:", round(hottest_month$Avg_temp, 1), "F\n")
+cat("Coldest month:", coldest_month$Month, "- Avg temp:", round(coldest_month$Avg_temp, 1), "F\n")
+sink()
 
+# print results_________-----
 print("=== ANALYSIS RESULTS ===")
 print(monthly_temp)
 print(paste("Hottest month:", hottest_month$Month, "- Avg temp:", round(hottest_month$Avg_temp, 1)))
