@@ -46,13 +46,14 @@ The analysis revealed seasonal temperature patterns and a notable relationship b
 ## Visualizations
 
 ### Monthly Average Temperature
-![Monthly Temperature Plot](outputs/plots/monthly_temperature.png)
+<img src="outputs/plots/monthly_temperature.png" alt="Monthly Temperature Plot" width="500">
 
 ### Wind vs Temperature
-![Wind vs Temperature Scatter Plot](outputs/plots/wind_vs_temperature.png)
+<img src="outputs/plots/wind_vs_temperature.png" alt="Wind vs Temperature Scatter Plot" width="500">
 
 ### Monthly Temperature Distribution
-![Monthly Temperature Distribution](outputs/plots/monthly_distribution.png)
+<img src="outputs/plots/monthly_distribution.png" alt="Monthly Temperature Distribution" width="500">
+
 
 
 ## Reports
